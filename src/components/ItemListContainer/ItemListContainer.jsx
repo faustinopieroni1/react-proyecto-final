@@ -5,11 +5,11 @@
 
 //IMPORTS
 import { useEffect, useState } from 'react'
-
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import { gFetch } from '../../helpers/gFetch';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
 
 
 
@@ -61,7 +61,7 @@ function ItemListContainer({ greeting }) { //--> Nombre de parametro (se le llam
 
 
     useEffect(() => {
-        
+
 
         gFetch() //---> Funcion importada, la cual contiene una promesa y ARRAY de los productos
 
@@ -85,8 +85,9 @@ function ItemListContainer({ greeting }) { //--> Nombre de parametro (se le llam
 
 
             { /* para escapar del jsx */
-                loading ? <h2>cargando...</h2> //---> si "loading" es true
-                    : //---> si "loading" es true
+            
+                loading ? <h2>cargando...</h2>
+                    :
                     producto.map((propiedadesProductos) =>
 
 
@@ -106,7 +107,7 @@ function ItemListContainer({ greeting }) { //--> Nombre de parametro (se le llam
 
                             </Card.Body>
 
-                        </Card>) //---> Cuando "loading" sea falso
+                        </Card>)
             }
 
 

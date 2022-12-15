@@ -35,7 +35,7 @@ function NavBar() {
                         </Link>
 
 
-                        <li className="nav-item dropdown">
+                         {/* <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle active" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="">Suplementos</a>
 
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -45,9 +45,9 @@ function NavBar() {
                                 <li><a className="dropdown-item" href="#">Preentrenos</a></li>
                             </ul>
 
-                        </li>
-
-                        <li className="nav-item dropdown">
+                        </li> */}
+ 
+                        {/* <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle active" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="">Accesorios</a>
 
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -56,7 +56,7 @@ function NavBar() {
                                 <li><a className="dropdown-item" href="#">Guantes</a></li>
                             </ul>
 
-                        </li>
+                        </li> */}
 
 
                         <li className="nav-item">
