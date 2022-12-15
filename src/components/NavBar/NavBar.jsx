@@ -30,11 +30,10 @@ function NavBar() {
 
                     <ul className="navbar-nav">
 
-                        <a className="navbar-brand" href="">Like Nutrition Brand</a>
+                        <Link className="navbar-brand" to={'/inicio'}>
+                            Like Nutrition Brand
+                        </Link>
 
-                        <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="">Inicio</a>
-                        </li>
 
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle active" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="">Suplementos</a>
@@ -59,10 +58,6 @@ function NavBar() {
 
                         </li>
 
-                        {/* <form className=" d-flex col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                                <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" />
-                                <button className="btn btn-warning" type="submit">Buscar</button>
-                            </form> */}
 
                         <li className="nav-item">
                             <Link to={'/cart'}>

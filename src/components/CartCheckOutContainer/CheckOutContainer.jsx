@@ -1,6 +1,8 @@
-function CartCheckOutContainer(){
-    return(
-        <></>
+function CartCheckOutContainer() {
+    return (
+        <>
+            <h2>CartCheckOutContainer</h2>
+        </>
     )
 }
 

@@ -8,7 +8,7 @@ function Contador() {
 
     let [boleano, cambiarValorBoleano] = useState(true)
 
-    let fecha = Date()  //Mostrara una fecha
+    
 
 
     //--------------------------
@@ -37,7 +37,7 @@ function Contador() {
     return (
         <div >
             <p>Numero contado componente "Contador" = {valor}</p>
-            <p>{fecha}</p>
+           
             <button className='btn btn-outline-primary' onClick={handlerCambiarValorSuma}>+</button>
             <button className='btn btn-outline-danger' onClick={handlerCambiarValorResta}>-</button>
             <button className='btn btn-outline-secondary' onClick={handlerCambiarValorBoleano}>Cambiar Boleano</button>

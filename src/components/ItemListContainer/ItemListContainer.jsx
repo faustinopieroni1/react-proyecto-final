@@ -8,6 +8,9 @@ import { useEffect, useState } from 'react'
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
+import { gFetch } from '../../helpers/gFetch';
+
 
 
 
@@ -16,19 +19,19 @@ function ItemListContainer({ greeting }) { //--> Nombre de parametro (se le llam
 
 
 
+    //-------------------------------------------------------------
 
-    /* console.log(1)
-    setTimeout(() => { console.log(2) }, 3000)   //---> Ejemplo de asincrionismo
-    console.log(3)
-    console.log(4)
- */
+    //USESTATES: Ideales para cuando queremos que x variable arranque con yn valor dedterminado para luego modificarlo pueden contener [] o {}
+
+    //Persistir los objetos y que no se pierdan usando "USESTATES" ademas permite asignarle un valor inicial, el cual luego de un tiempo dado por un "setTimeOut" cambiara
 
 
 
     //--------------------------------------------------------------
+
     //USEEFFECTS: sirven para controlar el ciclo de vida de un componente
 
-
+    //Tipos de USEEFECTS
 
     /* //Este useEffect de ejecutara siempre que se reenderize el componente
     useEffect(() => {
@@ -47,71 +50,31 @@ function ItemListContainer({ greeting }) { //--> Nombre de parametro (se le llam
 
 
 
-    //--------------------------------------------------------------
-    //PROMESAS
-
-    let productos = [
-        { id: 1, name: 'Proteina', descripcion: 'Vainilla', stock: 20 },
-        { id: 3, name: 'Aumentadorr', descripcion: 'Chocolate', stock: 20 },
-        { id: 4, name: 'Creatina', descripcion: 'Neutra', stock: 20 },
-        { id: 5, name: 'Preentreno', descripcion: 'Fruit Punch ', stock: 20 }
-    ]
-
-    let gFetch = () => {  //---> Converti la promesa en funcion para pasarle parametros
-
-        return new Promise((resolve, reject) => {
-
-            setTimeout(() => {
-                let condition = true; //---> Agregue un setTimeout
-
-                if (condition == true) {
-                    resolve(productos) //---> Respuesta de mi promesa ene este caso "resolve", puede devolver Objetos, Arrays, Fn, Etc. Devuleve el array "productos"
-                } else {
-                    reject('erorr')
-                }
-
-            }, 3000) //---> tiempo de demora de ejecucion
-        })
-    }
-
-
-
     //---------------------------------------------------
-    //Persistir los objetos y que no se pierdan usando "USESTATES"
 
+    let [producto, setProducto] = useState([])  //--->Tendra el valor de setProductos que modificara el valor de useState caundo se cumpla la promesa "gFetch" demorada por el "setTimeout" asignado 
 
-
-    let [arrayProductos, setProductos] = useState([]) //---> arrayProductos tentra el valor de setProductos que modificara el valor de useState caundo termine la demora del "setTimeout"  el cual esta vacio
     let [loading, setLoading] = useState(true)
 
-
-
-    //----------------------------------------------------
-    //Resultados de promesas
+    /* console.log(producto) */  //---> Al principio mostrara un [array] vacio, hasta que se cumpla la promesa "gFetch" y el ".then" capture el resultado POSITIVO y lo envie al "setProducto"
 
 
 
     useEffect(() => {
+        
 
-        gFetch() // Simulacion de llamada API
+        gFetch() //---> Funcion importada, la cual contiene una promesa y ARRAY de los productos
 
-            .then((contenidoResolve) => { setProductos(contenidoResolve) }) //--->Capturar el resulatdo RESOLVE  y lo guearda en "setProductos" (fn normal)
+            .then((resolve) => { setProducto(resolve) }) // Gracias al "then" que captura el resultado positivo de la promesa "gFetch" ----> resolve tendra el valor del array del array de productos.
 
-            .catch((erorr) => { console.log(erorr) }) //--->Capturar el resulatdo REJECT (fn flecha)
-
-            .finally(() => { setLoading(false) })  //---> Se ejecuta siempre y al ultimo. Cambia el vlaor de "loading" al final de la ejecucion 
-
-    }, []) //---> Se ejecutara solo la primera vez que reenderize el componente ItemListContainer
-
-    console.log(arrayProductos)  //---> Mostrara un array vacio por que el valor de "arrayProductos" esta vacio hasa que se ejecute lo que esta dentro del usEeffect y se llenara el array con resulatdo RESOLVE
+            .finally(() => { setLoading(false) }) //---> Cambiara el valor inicial del useState "loading"
 
 
+    }, [])
 
 
 
     //--------------------------------------------------------------
-
-
 
     return ( //--->Solo 1 elemento que puede contener a otros x eso pongo un "frag"
 
@@ -123,18 +86,26 @@ function ItemListContainer({ greeting }) { //--> Nombre de parametro (se le llam
 
             { /* para escapar del jsx */
                 loading ? <h2>cargando...</h2> //---> si "loading" es true
-                    : productos.map((contenidoProductos) =>
+                    : //---> si "loading" es true
+                    producto.map((propiedadesProductos) =>
 
-                        <Card className='mt-3' style={{ width: '18rem' }} key={contenidoProductos.id}>
+
+                        <Card className='mt-3' style={{ width: '18rem' }} key={propiedadesProductos.id}>
+
                             <Card.Img variant="top" src="holder.js/100px180" />
+
                             <Card.Body>
-                                <Card.Title>{contenidoProductos.name}</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
-                                <Button variant="primary">Detalle del Producto</Button>
+
+                                <Card.Title>{propiedadesProductos.nombre}</Card.Title>
+
+                                <Card.Text>{propiedadesProductos.categoria}</Card.Text>
+
+                                <Link to={`/detalle/${propiedadesProductos.id}`}>
+                                    <Button variant="primary">Detalle del Producto</Button>
+                                </Link>
+
                             </Card.Body>
+
                         </Card>) //---> Cuando "loading" sea falso
             }
 
