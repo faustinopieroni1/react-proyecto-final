@@ -30,7 +30,7 @@ function NavBar() {
 
                     <ul className="navbar-nav">
 
-                        <Link className="navbar-brand" to={'/inicio'}>
+                        <Link className="navbar-brand" to={'/'}>
                             Like Nutrition Brand
                         </Link>
 
