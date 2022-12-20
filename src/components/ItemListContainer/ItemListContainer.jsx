@@ -65,7 +65,7 @@ function ItemListContainer({ greeting }) { //--> Nombre de parametro (se le llam
 
         gFetch() //---> Funcion importada, la cual contiene una promesa y ARRAY de los productos
 
-            .then((resolve) => { setProducto(resolve) }) // Gracias al "then" que captura el resultado positivo de la promesa "gFetch" ----> resolve tendra el valor del array del array de productos.
+            .then((resolve) => { setProducto(resolve) }) // Gracias al "then" que captura el resultado positivo de la promesa "gFetch" ----> "setProducto" tendra el valor de "resolve" que sera array el array de productos.
 
             .finally(() => { setLoading(false) }) //---> Cambiara el valor inicial del useState "loading"
 

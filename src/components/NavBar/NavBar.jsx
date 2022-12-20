@@ -35,41 +35,25 @@ function NavBar() {
                         </Link>
 
 
-                         {/* <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle active" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="">Suplementos</a>
-
-                            <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a className="dropdown-item" href="#">Proteinas</a></li>
-                                <li><a className="dropdown-item" href="#">Creatinas</a></li>
-                                <li><a className="dropdown-item" href="#">Gainers</a></li>
-                                <li><a className="dropdown-item" href="#">Preentrenos</a></li>
-                            </ul>
-
-                        </li> */}
- 
-                        {/* <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle active" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="">Accesorios</a>
-
-                            <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a className="dropdown-item" href="#">Cintos</a></li>
-                                <li><a className="dropdown-item" href="#">Shakers</a></li>
-                                <li><a className="dropdown-item" href="#">Guantes</a></li>
-                            </ul>
-
-                        </li> */}
+                        <Link className="nav-link active">
+                            Suplementos
+                        </Link>
 
 
-                        <li className="nav-item">
-                            <Link to={'/cart'}>
-                                <CartWidget />
-                            </Link>
-                        </li>
+                        <Link className="nav-link active">
+                            Accesorios
+                        </Link>
 
-                        <li className="nav-item">
-                            <Link to={'/checkOut'}>
-                                <CartCheckOutWidget />
-                            </Link>
-                        </li>
+
+                        <Link to={'/cart'}>
+                            <CartWidget />
+                        </Link>
+
+
+                        <Link to={'/checkOut'}>
+                            <CartCheckOutWidget />
+                        </Link>
+
 
                     </ul>
 
