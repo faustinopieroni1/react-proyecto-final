@@ -15,7 +15,7 @@ function ItemDetailContainer() {
     let [producto, setProducto] = useState({})
     /*  console.log(producto) */ //---> Al principio mostrara un [objeto] vacio, hasta que se cumpla la promesa "gFetch" y el ".then" capture el resultado POSITIVO y lo envie al "setProducto"
 
-    let { productoId } = useParams()
+    let { productoId } = useParams()  // ---> Almacena el ":productoId" se debe llamar igual
     /* console.log(productoId) */
 
 

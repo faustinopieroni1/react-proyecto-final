@@ -5,7 +5,7 @@
 
 //IMPORTS
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { gFetch } from '../../helpers/gFetch';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -49,6 +49,11 @@ function ItemListContainer({ greeting }) { //--> Nombre de parametro (se le llam
  */
 
 
+    //--------------------------------------------------
+
+    let { categoriaId } = useParams()  //---> Guardo la info del link "categoriaID" que contendr gracias a los ":" el nombre de que boton estoy tocando
+
+
 
     //---------------------------------------------------
 
@@ -62,15 +67,24 @@ function ItemListContainer({ greeting }) { //--> Nombre de parametro (se le llam
 
     useEffect(() => {
 
+        if (categoriaId) {  //---> "categoriaId" es true (existe gracias a que se paso como parametro del Link por que se entro a "suplementos" o "accesorios")
 
-        gFetch() //---> Funcion importada, la cual contiene una promesa y ARRAY de los productos
+            gFetch()
 
-            .then((resolve) => { setProducto(resolve) }) // Gracias al "then" que captura el resultado positivo de la promesa "gFetch" ----> "setProducto" tendra el valor de "resolve" que sera array el array de productos.
+                .then((resolve) => { setProducto(resolve.filter(prod => prod.categoria === categoriaId)) })
 
-            .finally(() => { setLoading(false) }) //---> Cambiara el valor inicial del useState "loading"
+                .finally(() => { setLoading(false) })
 
+        } else {
 
-    }, [])
+            gFetch() //---> Funcion importada, la cual contiene una promesa y ARRAY de los productos
+
+                .then((resolve) => { setProducto(resolve) }) // Gracias al "then" que captura el resultado positivo de la promesa "gFetch" ----> "setProducto" tendra el valor de "resolve" que sera array el array de productos.
+
+                .finally(() => { setLoading(false) }) //---> Cambiara el valor inicial del useState "loading"
+        }
+
+    }, [categoriaId])
 
 
 
@@ -85,7 +99,7 @@ function ItemListContainer({ greeting }) { //--> Nombre de parametro (se le llam
 
 
             { /* para escapar del jsx */
-            
+
                 loading ? <h2>cargando...</h2>
                     :
                     producto.map((propiedadesProductos) =>

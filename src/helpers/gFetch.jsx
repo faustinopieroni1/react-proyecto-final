@@ -10,7 +10,7 @@ let productos = [
 ]
 
 
-export const gFetch = (id) => {  //---> Converti la promesa en funcion para pasarle parametros y exportarla
+export const gFetch = () => {  //---> Converti la promesa en funcion para pasarle parametros y exportarla
 
     return new Promise((resolve, reject) => {
 
