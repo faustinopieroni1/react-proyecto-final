@@ -71,7 +71,7 @@ function ItemListContainer({ greeting }) { //--> Nombre de parametro (se le llam
 
             gFetch()
 
-                .then((resolve) => { setProducto(resolve.filter(prod => prod.categoria === categoriaId)) })
+                .then((resolve) => { setProducto(resolve.filter(prod => prod.categoria === categoriaId)) })  //---> filter para que solo me renderize los elementos solicitados en el :id
 
                 .finally(() => { setLoading(false) })
 
