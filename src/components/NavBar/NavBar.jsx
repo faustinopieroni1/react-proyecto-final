@@ -35,12 +35,12 @@ function NavBar() {
                         </Link>
 
 
-                        <Link className="nav-link active" to={'categoria/suplementos'}>
+                        <Link className="nav-link active" to={'categoria/Suplementos'}>
                             Suplementos
                         </Link>
 
 
-                        <Link className="nav-link active"to={'categoria/accesorios'}>
+                        <Link className="nav-link active"to={'categoria/Accesorios'}>
                             Accesorios
                         </Link>
 
