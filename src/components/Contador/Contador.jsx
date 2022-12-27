@@ -2,46 +2,51 @@ import { useState } from 'react' //--->Funcion que ayuda a persistir "states" (v
 
 // La fn() "useState" viene con react. Array de 2 indices, [0 = vlaor inicial] pasado por parametro a "useState" [1 = funcion] cambiara el valor del indice 0
 
-function Contador() {
+function Contador({ stock = 10 }) {
 
-    let [valor, cambiarValor] = useState(0) // Destructuring array de fn() "useState". "valor" almacena el valor pasado por parametro a "useState"y "cambiarValor" funcion que modificara el valor de "valor"
+    let [valor, setValor] = useState(0) // Destructuring array de fn() "useState". "valor" almacena el valor pasado por parametro a "useState"y "cambiarValor" funcion que modificara el valor de "valor"
 
-    let [boleano, cambiarValorBoleano] = useState(true)
-
-    
 
 
     //--------------------------
 
-    function handlerCambiarValorSuma() {
-        cambiarValor(valor + 1) //"cambiarValor" calmbiara el valor de "valor" en + 1
+    function handlerResta() {
+        if (valor > 1) {
+            setValor(valor - 1) //---> "cambiarValor" calmbiara el valor de "valor" en - 1
+        }
     }
 
-    function handlerCambiarValorResta() {
-        cambiarValor(valor - 1) //"cambiarValor" calmbiara el valor de "valor" en + 1
-
+    function handlerSuma() {
+        if (valor < stock) {
+            setValor(valor + 1) //---> "cambiarValor" calmbiara el valor de "valor" en + 1
+        }
     }
 
     function handlerRestablecerValor() {
-        cambiarValor(valor = 0) //"cambiarValor" calmbiara el valor de "valor" en 0
+        setValor(valor = 0) //---> "cambiarValor" calmbiara el valor de "valor" en 0
 
     }
 
-    function handlerCambiarValorBoleano() {
-        cambiarValorBoleano(!boleano) //"cambiarValorBoleano" cambiara el valor de "boleano" al valor contrario al q tenga
-        console.log(boleano)
-    }
+
 
     //--------------------------
 
     return (
-        <div >
-            <p>Numero contado componente "Contador" = {valor}</p>
-           
-            <button className='btn btn-outline-primary' onClick={handlerCambiarValorSuma}>+</button>
-            <button className='btn btn-outline-danger' onClick={handlerCambiarValorResta}>-</button>
-            <button className='btn btn-outline-secondary' onClick={handlerCambiarValorBoleano}>Cambiar Boleano</button>
-            <button className='btn btn-outline-secondary' onClick={handlerRestablecerValor}> Reset</button>
+        <div className='card m-5'>
+
+            <div className='card-header text-center'>
+                <label> {valor} </label>
+            </div>
+
+            <div className='card-body d-flex flex-column'>
+                <button className='btn btn-outline-primary' onClick={handlerSuma}>+</button>
+                <button className='btn btn-outline-danger' onClick={handlerResta}>-</button>
+                <button className='btn btn-outline-secondary' onClick={handlerRestablecerValor}> Reset</button>
+            </div>
+
+            <div className='card-footer text-center'>
+                <button className='btn btn-outline-success'> Agregar al carrito</button>
+            </div>
 
         </div>
     )

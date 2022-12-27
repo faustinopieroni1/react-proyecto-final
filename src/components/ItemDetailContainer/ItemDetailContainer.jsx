@@ -30,7 +30,7 @@ function ItemDetailContainer() {
     return (
         <>
 
-            <div className="container border border-3 border-primary rounded">
+            <div className="container border border-3 border-primary rounded d-flex flex-row">
                 <div className="row">
                     <div className="col">
                         <h3>Nombre: {producto.nombre}</h3>
@@ -38,10 +38,11 @@ function ItemDetailContainer() {
                         <h3>Precio: {producto.precio}</h3>
                     </div>
                 </div>
-            </div>
 
-            <div>
-                <Contador />
+                <div>
+                    <Contador />
+                </div>
+
             </div>
 
         </>

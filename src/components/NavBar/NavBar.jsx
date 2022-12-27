@@ -26,7 +26,7 @@ function NavBar() {
 
                 </button>
 
-                <div className="collapse navbar-collapse justify-content-around" id="navbarNav">
+                <div className="text-center collapse navbar-collapse justify-content-around" id="navbarNav">
 
                     <ul className="navbar-nav">
 
@@ -40,7 +40,7 @@ function NavBar() {
                         </Link>
 
 
-                        <Link className="nav-link active"to={'categoria/Accesorios'}>
+                        <Link className="nav-link active" to={'categoria/Accesorios'}>
                             Accesorios
                         </Link>
 
@@ -53,7 +53,6 @@ function NavBar() {
                         <Link to={'/checkOut'}>
                             <CartCheckOutWidget />
                         </Link>
-
 
                     </ul>
 
