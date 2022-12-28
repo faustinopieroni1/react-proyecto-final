@@ -3,7 +3,7 @@ import { useState } from "react"
 import { useParams } from "react-router-dom"
 
 import { gFetch } from "../../helpers/gFetch"
-import Contador from "../Contador/Contador"
+import ItemDetail from "../../components/ItemDetail/ItemDetail"
 
 import "./ItemDetailContainer.css"
 
@@ -28,24 +28,7 @@ function ItemDetailContainer() {
 
 
     return (
-        <>
-
-            <div className="container border border-3 border-primary rounded d-flex flex-row">
-                <div className="row">
-                    <div className="col">
-                        <h3>Nombre: {producto.nombre}</h3>
-                        <h3>Categoria: {producto.categoria}</h3>
-                        <h3>Precio: {producto.precio}</h3>
-                    </div>
-                </div>
-
-                <div>
-                    <Contador />
-                </div>
-
-            </div>
-
-        </>
+        <ItemDetail producto={producto} />
     )
 }
 

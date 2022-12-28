@@ -5,10 +5,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import CartContainer from './components/CartContainer/CartContainer';
-import CartCheckOutContainer from './components/CartCheckOutContainer/CheckOutContainer';
+import ItemListContainer from './containers/ItemListContainer/ItemListContainer'
+import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
+import CartContainer from './containers/CartContainer/CartContainer';
+import CartCheckOutContainer from './containers/CartCheckOutContainer/CheckOutContainer';
 
 
 

@@ -7,8 +7,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import { gFetch } from '../../helpers/gFetch';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import ItemList from '../../components/ItemList/ItemList';
 
 
 
@@ -94,34 +93,13 @@ function ItemListContainer({ greeting }) { //--> Nombre de parametro (se le llam
 
         <>
 
-            <h3>ItemListContainer</h3>
-            <p>{greeting}</p>
+            { /* para escapar del jsx y poder escribir */
 
-
-            { /* para escapar del jsx */
-
-                loading ? <h2>cargando...</h2>
+                loading ?
+                    <h2>cargando...</h2>
                     :
-                    producto.map((propiedadesProductos) =>
+                    < ItemList producto={producto} />
 
-
-                        <Card className='mt-3' style={{ width: '18rem' }} key={propiedadesProductos.id}>
-
-                            <Card.Img variant="top" src="holder.js/100px180" />
-
-                            <Card.Body>
-
-                                <Card.Title>{propiedadesProductos.nombre}</Card.Title>
-
-                                <Card.Text>{propiedadesProductos.categoria}</Card.Text>
-
-                                <Link to={`/detalle/${propiedadesProductos.id}`}>
-                                    <Button variant="primary">Detalle del Producto</Button>
-                                </Link>
-
-                            </Card.Body>
-
-                        </Card>)
             }
 
 
