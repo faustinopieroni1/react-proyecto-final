@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import Item from "../Item/Item"
 
 
 function ItemList({ producto }) {
@@ -6,26 +7,8 @@ function ItemList({ producto }) {
     return (
         producto.map((propiedadesProductos) =>
 
-            <div className="card w-100 mt-5">
+            <Item propiedadesProductos={propiedadesProductos} key={propiedadesProductos.id} />
 
-                <div className="card-header">
-                    {`${propiedadesProductos.nombre} - ${propiedadesProductos.categoria}`}
-                </div>
-
-                <div className="card-body">
-                    <img src="" alt="" />
-                    {propiedadesProductos.precio}
-                </div>
-
-                <div className="card-footer">
-                    <Link to={`/detalle/${propiedadesProductos.id}`}>
-                        <button className="btn btn-outline-primary btn-block">
-                            Detalle del Producto
-                        </button>
-                    </Link>
-                </div>
-
-            </div>
         )
     )
 
