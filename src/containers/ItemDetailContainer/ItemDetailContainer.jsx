@@ -31,7 +31,7 @@ function ItemDetailContainer() {
     return (
         <>
             <ItemDetail producto={producto} />
-            
+            <Input/>
         </>
     )
 }
