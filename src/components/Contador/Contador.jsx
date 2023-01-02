@@ -1,4 +1,5 @@
 import { useState } from 'react' //--->Funcion que ayuda a persistir "states" (valores de variales)
+import ChangerButton from '../AgregarAlCarrito/AddToCart'
 
 // La fn() "useState" viene con react. Array de 2 indices, [0 = vlaor inicial] pasado por parametro a "useState" [1 = funcion] cambiara el valor del indice 0
 
@@ -45,7 +46,7 @@ function Contador({ stock = 10 }) {
             </div>
 
             <div className='card-footer text-center'>
-                <button className='btn btn-outline-success'> Agregar al carrito</button>
+                <ChangerButton />
             </div>
 
         </div>

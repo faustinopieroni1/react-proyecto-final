@@ -22,7 +22,7 @@ function ItemListContainer({ greeting }) { //--> Nombre de parametro (se le llam
 
     //USESTATES: Ideales para cuando queremos que x variable arranque con yn valor dedterminado para luego modificarlo pueden contener [] o {}
 
-    //Persistir los objetos y que no se pierdan usando "USESTATES" ademas permite asignarle un valor inicial, el cual luego de un tiempo dado por un "setTimeOut" cambiara
+    //Persistir los objetos y que no se pierdan usando "USESTATES" ademas permite asignarle un valor inicial, el cual luego de un tiempo dado por un "setTimeOut" cambiara o tambien puede cambiar con un "re-render"
 
 
 

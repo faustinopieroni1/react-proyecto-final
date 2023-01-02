@@ -37,7 +37,7 @@ function App() {  //---> Es un componente "CONTENEDOR", no es buena practica esc
 
         <Routes>
           <Route path='/' element={<ItemListContainer greeting={saludo} />} />
-          <Route path='/categoria/:categoriaId' element={<ItemListContainer />} />  {/* los ":" permiten que varie la ruta */}
+          <Route path='/categoria/:categoriaId' element={<ItemListContainer />} />  {/* los ":" permiten que la ruta sea dinamica almacenando el contenido en "string" */}
           <Route path='/detalle/:productoId' element={<ItemDetailContainer />} />
           <Route path='/cart' element={<CartContainer />} />
           <Route path='/checkOut' element={<CartCheckOutContainer />} />
