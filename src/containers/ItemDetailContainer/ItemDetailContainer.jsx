@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 
 import { gFetch } from "../../helpers/gFetch"
 import ItemDetail from "../../components/ItemDetail/ItemDetail"
-import Input from "../../eventos/Input"
+import Input from "../../events/Input"
 
 import "./ItemDetailContainer.css"
 

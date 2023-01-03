@@ -7,13 +7,14 @@ import { useState } from "react"
 function ButtonAddToCart({ handlerButtonTypeChanger }) {
     return (
         <>
-            <button className='btn btn-outline-success' onClick={handlerButtonTypeChanger}> Agregar al carrito</button> {/* Al hacer click se ejecutara "handlerButtonTypeChanger" */}
+            <button className='btn btn-outline-success' onClick={handlerButtonTypeChanger}> Agregar al carrito</button>
+            {/* Al hacer click se ejecutara "handlerButtonTypeChanger" */}
         </>
     )
 }
 
 
-function InAddToCart() {
+function InButtonAddToCart() {
     return (
         <>
 
@@ -41,6 +42,8 @@ function ChangerButton() {
         setButtonType('InAddToCart')
     }
 
+
+
     return (
         <div>
 
@@ -48,7 +51,7 @@ function ChangerButton() {
                 buttonType == 'ButtonAddToCart' ?
                     <ButtonAddToCart handlerChanger={handlerButtonTypeChanger} /> /* Le paso la fincion como parametro */
                     :
-                    <InAddToCart />
+                    <InButtonAddToCart />
             }
 
         </div>
