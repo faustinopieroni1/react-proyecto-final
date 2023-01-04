@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 
 
@@ -17,14 +18,17 @@ function ButtonAddToCart({ handlerButtonTypeChanger }) {
 function InButtonAddToCart() {
     return (
         <>
+            <Link to={'/cart'}>
+                <button className="btn btn-outline-primary">
+                    Ir al carrito
+                </button>
+            </Link>
 
-            <button className="btn btn-outline-primary">
-                Ir al carrito
-            </button>
-
-            <button className="btn btn-outline-primary">
-                Seguir comprando
-            </button>
+            <Link to={'/'}>
+                <button className="btn btn-outline-primary">
+                    Seguir comprando
+                </button>
+            </Link>
 
         </>
     )
@@ -49,7 +53,7 @@ function ChangerButton() {
 
             {
                 buttonType == 'ButtonAddToCart' ?
-                    <ButtonAddToCart handlerChanger={handlerButtonTypeChanger} /> /* Le paso la fincion como parametro */
+                    <ButtonAddToCart handlerButtonTypeChanger={handlerButtonTypeChanger} /> /* Le paso la fincion como parametro */
                     :
                     <InButtonAddToCart />
             }

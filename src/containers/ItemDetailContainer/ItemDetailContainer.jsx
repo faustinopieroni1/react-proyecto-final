@@ -30,8 +30,8 @@ function ItemDetailContainer() {
 
     return (
         <>
-            <ItemDetail producto={producto} />
-            {/* <Input/> */}
+                <ItemDetail producto={producto} />
+                {/* <Input/> */}
         </>
     )
 }

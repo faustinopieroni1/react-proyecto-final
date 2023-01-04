@@ -1,4 +1,3 @@
-import ChangerButton from "../ChangerButton/ChangerButton"
 import Contador from "../Contador/Contador"
 
 function ItemDetail({producto}) { //---> Traigo "producto" desde IDC como propiedad para aplicar .nombre, .precio, .categoria con {destructuring}
@@ -15,8 +14,7 @@ function ItemDetail({producto}) { //---> Traigo "producto" desde IDC como propie
             </div>
 
             <div>
-                {/* <Contador/> */}
-                <ChangerButton/>
+                <Contador/>
             </div>
 
         </div>

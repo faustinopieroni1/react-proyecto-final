@@ -93,14 +93,18 @@ function ItemListContainer({ greeting }) { //--> Nombre de parametro (se le llam
 
         <>
 
-            { /* para escapar del jsx y poder escribir */
 
-                loading ?
-                    <h2>cargando...</h2>
-                    :
-                    < ItemList producto={producto} />
+            <div className='text-center'>
+                {
 
-            }
+                    loading ?
+                        <h2>cargando...</h2>
+                        :
+                        < ItemList producto={producto} />
+
+                }
+            </div>
+
 
 
         </>

@@ -6,7 +6,8 @@ let productos = [
     {  id: '5', nombre: 'Shaker Premium', categoria: 'Accesorios', precio: '$130' },
     {  id: '6', nombre: 'Shaker Basico', categoria: 'Accesorios', precio: '$20' },
     {  id: '7', nombre: 'Guantes Basios', categoria: 'Accesorios', precio: '$55'},
-    {  id: '8', nombre: 'Guantes con Muñequeras', categoria: 'Accesorios', precio: '$70' }
+    {  id: '8', nombre: 'Guantes con Muñequeras', categoria: 'Accesorios', precio: '$70' },
+    {  id: '9', nombre: 'Cinturon de Cuero Reforzado', categoria: 'Accesorios', precio: '$230' }
 ]
 
 
