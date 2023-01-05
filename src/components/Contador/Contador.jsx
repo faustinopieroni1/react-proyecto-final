@@ -29,6 +29,7 @@ function Contador({ stock = 10 }) {
 
     }
 
+    
 
 
     //--------------------------
@@ -47,7 +48,7 @@ function Contador({ stock = 10 }) {
             </div>
 
             <div className='card-footer text-center'>
-                <ChangerButton />
+                <ChangerButton valor={valor}/>
             </div>
 
         </div>

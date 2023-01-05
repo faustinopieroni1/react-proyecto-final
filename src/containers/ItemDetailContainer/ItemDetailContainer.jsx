@@ -7,6 +7,7 @@ import ItemDetail from "../../components/ItemDetail/ItemDetail"
 import Input from "../../events/Input"
 
 import "./ItemDetailContainer.css"
+import Contador from "../../components/Contador/Contador"
 
 
 
@@ -30,8 +31,9 @@ function ItemDetailContainer() {
 
     return (
         <>
-                <ItemDetail producto={producto} />
-                {/* <Input/> */}
+            <ItemDetail producto={producto} />
+
+            {/* <Input/> */}
         </>
     )
 }
