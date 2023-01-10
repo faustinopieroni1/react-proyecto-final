@@ -7,7 +7,7 @@ function Item({ propiedadesProductos }) {
 
         <>
         
-            <div class="col-10 col-sm-6 col-lg-4 mt-3">
+            <div className="col-10 col-sm-6 col-lg-4 mt-3">
                 <div className="card w-100 mt-5" >
 
                     <div className="card-header">

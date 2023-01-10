@@ -14,7 +14,7 @@ function ItemDetail({producto}) { //---> Traigo "producto" desde IDC como propie
             </div>
 
             <div>
-                <Contador/>
+                <Contador producto={producto}/>
             </div>
 
         </div>

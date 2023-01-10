@@ -14,6 +14,7 @@ import CartCheckOutContainer from './containers/CartCheckOutContainer/CheckOutCo
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
+import CartContextProvider from './context/CartContext';
 
 
 
@@ -30,25 +31,26 @@ function App() {  //---> Es un componente "CONTENEDOR", no es buena practica esc
   return (
     /* Todo lo que se escriba aca, sera en jsx */
 
-    <> {/* "frag" Igual a un div , se usa en los returns*/}
+    <> {/* "frag" = "div"*/}
 
-      <BrowserRouter>
-        <NavBar />
+      <CartContextProvider> {/* los componentes pasan a ser hijos del provider y se en cuentran en "children" */}
 
-        <Routes>
-          <Route path='/' element={<ItemListContainer greeting={saludo} />} />
-          <Route path='/categoria/:categoriaId' element={<ItemListContainer />} />  {/* los ":" permiten que la ruta sea dinamica almacenando el contenido en "string" */}
-          <Route path='/detalle/:productoId' element={<ItemDetailContainer />} />
-          <Route path='/cart' element={<CartContainer />} />
-          <Route path='/checkOut' element={<CartCheckOutContainer />} />
+        <BrowserRouter>
 
-          {/* para cualquier ruta que no exista */}
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<ItemListContainer greeting={saludo} />} />
+            <Route path='/categoria/:categoriaId' element={<ItemListContainer />} />  {/* los ":" permiten que la ruta sea dinamica almacenando el contenido en "string" */}
+            <Route path='/detalle/:productoId' element={<ItemDetailContainer />} />
+            <Route path='/cart' element={<CartContainer />} />
+            <Route path='/checkOut' element={<CartCheckOutContainer />} />
+            <Route path='*' elementent={<Navigate to='/' />} /> {/* para cualquier ruta que no exista */}
+          </Routes>
 
-          <Route path='*' elementent={<Navigate to='/' />} />
+        </BrowserRouter>
 
-        </Routes>
+      </CartContextProvider>
 
-      </BrowserRouter>
 
     </>
 
